@@ -2,7 +2,7 @@ package com.github.verbatim144.zadanie_kalkulator_s.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-//@JsonIgnoreProperties: to ignore any unknown properties in JSON input without exception
+//@JsonIgnoreProperties - to ignore any unknown properties in JSON input without exception
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Rates {
 
