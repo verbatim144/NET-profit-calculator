@@ -1567,7 +1567,7 @@ function getDateTranslation(date, locale, name, width, form, extended) {
             return getLocaleEraNames(locale, width)[date.getFullYear() <= 0 ? 0 : 1];
         default:
             // This default case is not needed by TypeScript compiler, as the switch is exhaustive.
-            // However Closure Compiler does not understand that and reports an error in typed mode.
+            // However Closure Compiler does not understand that and reports an error in typed model.
             // The `throw new Error` below works around the problem, and the unexpected: never variable
             // makes sure tsc still checks this code is unreachable.
             var unexpected = name;
@@ -13009,7 +13009,7 @@ var _Visitor = /** @class */ (function () {
     };
     // Translates the given message given the `TranslationBundle`
     // This is used for translating elements / blocks - see `_translateAttributes` for attributes
-    // no-op when called in extraction mode (returns [])
+    // no-op when called in extraction model (returns [])
     _Visitor.prototype._translateMessage = function (el, message) {
         if (message && this._mode === _VisitorMode.Merge) {
             var nodes = this._translations.get(message);
@@ -18833,7 +18833,7 @@ var _TsEmitterVisitor = /** @class */ (function (_super) {
         return _super.prototype.visitLiteralExpr.call(this, ast, ctx);
     };
     // Temporary workaround to support strictNullCheck enabled consumers of ngc emit.
-    // In SNC mode, [] have the type never[], so we cast here to any[].
+    // In SNC model, [] have the type never[], so we cast here to any[].
     // TODO: narrow the cast to a more explicit type, or use a pattern that does not
     // start with [].concat. see https://github.com/angular/angular/pull/11846
     _TsEmitterVisitor.prototype.visitLiteralArrayExpr = function (ast, ctx) {
@@ -25159,7 +25159,7 @@ var TemplateDefinitionBuilder = /** @class */ (function () {
             var selector = createCssSelector(element.name, outputAttrs);
             this.directiveMatcher.match(selector, function (sel, staticType) { _this.directives.add(staticType); });
         }
-        // Element creation mode
+        // Element creation model
         var parameters = [
             literal(elementIndex),
             literal(elementName),
@@ -25459,7 +25459,7 @@ var TemplateDefinitionBuilder = /** @class */ (function () {
             visitAll$1(this, element.children);
         }
         if (!createSelfClosingInstruction) {
-            // Finish element construction mode.
+            // Finish element construction model.
             this.instruction(this._creationCode, element.endSourceSpan || element.sourceSpan, Identifiers$1.elementEnd);
         }
         // Restore the state before exiting this node
@@ -31515,7 +31515,7 @@ var ChangeDetectorStatus;
      */
     ChangeDetectorStatus[ChangeDetectorStatus["CheckOnce"] = 0] = "CheckOnce";
     /**
-     * A state in which change detection is skipped until the change detector mode
+     * A state in which change detection is skipped until the change detector model
      * becomes `CheckOnce`.
      */
     ChangeDetectorStatus[ChangeDetectorStatus["Checked"] = 1] = "Checked";
@@ -32496,7 +32496,7 @@ function getClosureSafeProperty$1(objWithPropertyToExtract) {
 /**
  * Current injector value used by `inject`.
  * - `undefined`: it is an error to call `inject`
- * - `null`: `inject` can be called but there is no injector (limp-mode).
+ * - `null`: `inject` can be called but there is no injector (limp-model).
  * - Injector instance: Use the injector for resolution.
  */
 var _currentInjector = undefined;
@@ -32613,7 +32613,7 @@ function convertInjectableProviderToFactory(type, provider) {
     }
 }
 /**
- * Supports @Injectable() in JIT mode for Render2.
+ * Supports @Injectable() in JIT model for Render2.
  */
 function preR3InjectableCompile(injectableType, options) {
     if (options && options.providedIn !== undefined && injectableType.ngInjectableDef === undefined) {
@@ -34008,7 +34008,7 @@ function injectableDefRecord(token) {
         if (token instanceof InjectionToken) {
             throw new Error("Token " + stringify(token) + " is missing an ngInjectableDef definition.");
         }
-        // TODO(alxhub): there should probably be a strict mode which throws here instead of assuming a
+        // TODO(alxhub): there should probably be a strict model which throws here instead of assuming a
         // no-args constructor.
         return makeRecord(function () { return new token(); });
     }
@@ -35257,7 +35257,7 @@ var _runModeLocked = false;
 var _platform;
 var ALLOW_MULTIPLE_PLATFORMS = new InjectionToken('AllowMultipleToken');
 /**
- * Disable Angular's development mode, which turns off assertions and other
+ * Disable Angular's development model, which turns off assertions and other
  * checks within the framework.
  *
  * One important assertion this disables verifies that a change detection pass
@@ -35268,12 +35268,12 @@ var ALLOW_MULTIPLE_PLATFORMS = new InjectionToken('AllowMultipleToken');
  */
 function enableProdMode() {
     if (_runModeLocked) {
-        throw new Error('Cannot enable prod mode after platform setup.');
+        throw new Error('Cannot enable prod model after platform setup.');
     }
     _devMode = false;
 }
 /**
- * Returns whether Angular is in development mode. After called once,
+ * Returns whether Angular is in development model. After called once,
  * the value is locked and won't change any more.
  *
  * By default, this is true, unless a user calls `enableProdMode` before calling this.
@@ -35667,14 +35667,14 @@ var ApplicationRef = /** @class */ (function () {
         }
         this._loadComponent(compRef);
         if (isDevMode()) {
-            this._console.log("Angular is running in the development mode. Call enableProdMode() to enable the production mode.");
+            this._console.log("Angular is running in the development model. Call enableProdMode() to enable the production model.");
         }
         return compRef;
     };
     /**
      * Invoke this method to explicitly process change detection and its side-effects.
      *
-     * In development mode, `tick()` also performs a second change detection cycle to ensure that no
+     * In development model, `tick()` also performs a second change detection cycle to ensure that no
      * further changes are detected. If additional changes are picked up during this second cycle,
      * bindings in the app have side-effects that cannot be resolved in a single change detection
      * pass.
@@ -37952,7 +37952,7 @@ var ApplicationModule = /** @class */ (function () {
  * ```
  *
  * NOTE: In AOT the resolution happens during compilation, and so there should be no need
- * to call this method outside JIT mode.
+ * to call this method outside JIT model.
  *
  * @param resourceResolver a function which is responsible to returning a `Promise` of the resolved
  * URL. Browser's `fetch` method is a good default implementation.
@@ -38664,7 +38664,7 @@ var DebugContext = /** @class */ (function () {
 }());
 /**
  * This object is used to prevent cycles in the source files and to have a place where
- * debug mode can hook it. It is lazily filled when `isDevMode` is known.
+ * debug model can hook it. It is lazily filled when `isDevMode` is known.
  */
 var Services = {
     setCurrentNode: undefined,
@@ -42893,7 +42893,7 @@ function executeHooks(data, allHooks, checkHooks, creationMode) {
 }
 /**
  * Calls lifecycle hooks with their contexts, skipping init hooks if it's not
- * creation mode.
+ * creation model.
  *
  * @param currentView The current view
  * @param arr The array in which the hooks are found
@@ -42951,7 +42951,7 @@ function ngDevModeResetPerfCounters() {
 }
 /**
  * This checks to see if the `ngDevMode` has been set. If yes,
- * than we honor it, otherwise we default to dev mode with additional checks.
+ * than we honor it, otherwise we default to dev model with additional checks.
  *
  * The idea is that unless we are doing production build where we explicitly
  * set `ngDevMode == false` we should be helping the developer by providing
@@ -42969,7 +42969,7 @@ function throwCyclicDependencyError(token) {
 function throwMultipleComponentError(tNode) {
     throw new Error("Multiple components match node with tagname " + tNode.tagName);
 }
-/** Throws an ExpressionChangedAfterChecked error if checkNoChanges mode is on. */
+/** Throws an ExpressionChangedAfterChecked error if checkNoChanges model is on. */
 function throwErrorIfNoChangesMode(creationMode, checkNoChangesMode, oldValue, currValue) {
     if (checkNoChangesMode) {
         var msg = "ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. Previous value: '" + oldValue + "'. Current value: '" + currValue + "'.";
@@ -43738,7 +43738,7 @@ function isNodeMatchingSelector(tNode, selector) {
             if (!skipToNextSelector && !isPositive(mode) && !isPositive(current)) {
                 return false;
             }
-            // If we are skipping to the next :not() and this mode flag is positive,
+            // If we are skipping to the next :not() and this model flag is positive,
             // it's a part of the current :not() selector, and we should keep skipping
             if (skipToNextSelector && isPositive(current))
                 continue;
@@ -43887,7 +43887,7 @@ function allocStylingContext(lElement, templateStyleContext) {
  * Any styles that are later referenced using `updateStyleProp` must be
  * passed in within this function. Initial values for those styles are to
  * be declared after all initial style properties are declared (this change in
- * mode between declarations and initial styles is made possible using a special
+ * model between declarations and initial styles is made possible using a special
  * enum value found in `definition.ts`).
  *
  * @param initialStyleDeclarations a list of style declarations and initial style values
@@ -44591,7 +44591,7 @@ function getTViewCleanup(view) {
     return view[TVIEW].cleanup || (view[TVIEW].cleanup = []);
 }
 /**
- * In this mode, any changes in bindings will throw an ExpressionChangedAfterChecked error.
+ * In this model, any changes in bindings will throw an ExpressionChangedAfterChecked error.
  *
  * Necessary to support ChangeDetectorRef.checkNoChanges().
  */
@@ -44630,7 +44630,7 @@ function enterView(newView, host) {
  * the direction of traversal (up or down the view tree) a bit clearer.
  *
  * @param newView New state to become active
- * @param creationOnly An optional boolean to indicate that the view was processed in creation mode
+ * @param creationOnly An optional boolean to indicate that the view was processed in creation model
  * only, i.e. the first update will be done later. Only possible for dynamically created views.
  */
 function leaveView(newView, creationOnly) {
@@ -44638,7 +44638,7 @@ function leaveView(newView, creationOnly) {
         if (!checkNoChangesMode) {
             executeHooks(directives, tView.viewHooks, tView.viewCheckHooks, creationMode);
         }
-        // Views are clean and in update mode after being checked, so these bits are cleared
+        // Views are clean and in update model after being checked, so these bits are cleared
         viewData[FLAGS] &= ~(1 /* CreationMode */ | 4 /* Dirty */);
     }
     viewData[FLAGS] |= 16 /* RunInit */;
@@ -44893,8 +44893,8 @@ function renderComponentOrTemplate(node, hostView, componentOrContext, template)
 }
 /**
  * This function returns the default configuration of rendering flags depending on when the
- * template is in creation mode or update mode. By default, the update block is run with the
- * creation block when the view is in creation mode. Otherwise, the update block is run
+ * template is in creation model or update model. By default, the update block is run with the
+ * creation block when the view is in creation model. Otherwise, the update block is run
  * alone.
  *
  * Dynamically created views do NOT use this configuration (update block and create block are
@@ -45521,9 +45521,9 @@ function elementClassProp(index, stylingIndex, value) {
     updateClassProp(getStylingContext(index), stylingIndex, value ? true : false);
 }
 /**
- * Assign any inline style values to the element during creation mode.
+ * Assign any inline style values to the element during creation model.
  *
- * This instruction is meant to be called during creation mode to apply all styling
+ * This instruction is meant to be called during creation model to apply all styling
  * (e.g. `style="..."`) values to the element. This is also where the provided index
  * value is allocated for the styling details for its corresponding element (the element
  * index is the previous index value from this one).
@@ -46007,7 +46007,7 @@ function scanForView(containerNode, startIdx, viewBlockId) {
  * Marks the start of an embedded view.
  *
  * @param viewBlockId The ID of this view
- * @return boolean Whether or not this view is in creation mode
+ * @return boolean Whether or not this view is in creation model
  */
 function embeddedViewStart(viewBlockId) {
     var container = (isParent ? previousOrParentNode : getParentLNode(previousOrParentNode));
@@ -46335,7 +46335,7 @@ function detectChanges(component) {
 /**
  * Checks the change detector and its children, and throws if any changes are detected.
  *
- * This is used in development mode to verify that running change detection doesn't
+ * This is used in development model to verify that running change detection doesn't
  * introduce other changes.
  */
 function checkNoChanges(component) {
@@ -47200,7 +47200,7 @@ function NgOnChangesFeature(definition) {
         _loop_1(declaredName);
     }
     // If an onInit hook is defined, it will need to wrap the ngOnChanges call
-    // so the call order is changes-init-check in creation mode. In subsequent
+    // so the call order is changes-init-check in creation model. In subsequent
     // change detection runs, only the check wrapper will be called.
     if (definition.onInit != null) {
         definition.onInit = onChangesWrapper(definition.onInit);
@@ -47428,7 +47428,7 @@ var ViewRef$1 = /** @class */ (function () {
     /**
      * Checks the change detector and its children, and throws if any changes are detected.
      *
-     * This is used in development mode to verify that running change detection doesn't
+     * This is used in development model to verify that running change detection doesn't
      * introduce other changes.
      */
     ViewRef.prototype.checkNoChanges = function () { checkNoChanges(this.context); };
@@ -47555,7 +47555,7 @@ var ComponentFactory$1 = /** @class */ (function (_super) {
                     projection$$1.push(firstTNode);
                 }
             }
-            // Execute the template in creation mode only, and then turn off the CreationMode flag
+            // Execute the template in creation model only, and then turn off the CreationMode flag
             renderEmbeddedTemplate(elementNode, elementNode.data[TVIEW], component, 1 /* Create */);
             elementNode.data[FLAGS] &= ~1 /* CreationMode */;
         }
@@ -49928,7 +49928,7 @@ var JitReflector = /** @class */ (function () {
         return this.reflectionCapabilities.annotations(typeOrFunc);
     };
     JitReflector.prototype.shallowAnnotations = function (typeOrFunc) {
-        throw new Error('Not supported in JIT mode');
+        throw new Error('Not supported in JIT model');
     };
     JitReflector.prototype.propMetadata = function (typeOrFunc) {
         return this.reflectionCapabilities.propMetadata(typeOrFunc);
