@@ -17,11 +17,18 @@ public class Currency {
     @GeneratedValue
     private Long id;
     private String currency;
-    private Rates[] rates;
+    private Integer value;
+   // private Rates[] rates;
 
 
     public Currency(){
 
+    }
+
+    public Currency(Long id, String currency, Integer value) {
+        this.id = id;
+        this.currency = currency;
+        this.value = value;
     }
 
     public Long getId() {
@@ -40,12 +47,20 @@ public class Currency {
         this.currency = currency;
     }
 
-    public Rates[] getRates() {
+    public Integer getValue() {
+        return value;
+    }
+
+    public void setValue(Integer value) {
+        this.value = value;
+    }
+
+  /*    public Rates[] getRates() {
         return rates;
     }
 
-    public void setRates(Rates[] rates) {
+     public void setRates(Rates[] rates) {
         this.rates = rates;
     }
-
+*/
 }
