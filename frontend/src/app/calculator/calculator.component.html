@@ -12,3 +12,21 @@
     value is required
   </div>
 </div>
+
+<form>
+  <div class="form-check">
+    <label class="toggle">
+      <input type="radio" name="toggle" checked   value="EUR"
+             [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">EUR</span>
+    </label>
+    <label class="toggle">
+      <input type="radio" name="toggle" value="GBP"
+             [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">GBP</span>
+    </label>
+    <label class="toggle">
+      <input type="radio" name="toggle"  value="PLN"
+             [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">PLN</span>
+    </label>
+  </div>
+</form>
+
