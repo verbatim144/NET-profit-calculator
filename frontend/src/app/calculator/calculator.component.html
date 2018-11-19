@@ -1,0 +1,14 @@
+<h3>Calculator</h3>
+<hr>
+
+<div class="form-group">
+  <label for="value">value</label>
+  <input type="number" class="form-control" id="value"
+         placeholder="Enter salary"
+         required
+         [(ngModel)]="calculator.value" name="value" #value="ngModel">
+  <div [hidden]="value.valid || value.pristine"
+       class="alert alert-danger">
+    value is required
+  </div>
+</div>
