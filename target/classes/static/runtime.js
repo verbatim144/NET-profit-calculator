@@ -108,10 +108,10 @@
 /******/ 	};
 /******/
 /******/ 	// create a fake namespace object
-/******/ 	// model & 1: value is a module id, require it
-/******/ 	// model & 2: merge all properties of value into the ns
-/******/ 	// model & 4: return value when already ns object
-/******/ 	// model & 8|1: behave like require
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
 /******/ 	__webpack_require__.t = function(value, mode) {
 /******/ 		if(mode & 1) value = __webpack_require__(value);
 /******/ 		if(mode & 8) return value;

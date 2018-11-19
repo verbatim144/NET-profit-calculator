@@ -3303,7 +3303,7 @@ Zone.__load_patch('ZoneAwarePromise', function (global, Zone, api) {
         return ZoneAwarePromise;
     }());
     // Protect against aggressive optimizers dropping seemingly unused properties.
-    // E.g. Closure Compiler in advanced model.
+    // E.g. Closure Compiler in advanced mode.
     ZoneAwarePromise['resolve'] = ZoneAwarePromise.resolve;
     ZoneAwarePromise['reject'] = ZoneAwarePromise.reject;
     ZoneAwarePromise['race'] = ZoneAwarePromise.race;

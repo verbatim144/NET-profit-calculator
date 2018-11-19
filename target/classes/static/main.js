@@ -23,6 +23,56 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/app-routing/app-routing.module.ts":
+/*!***************************************************!*\
+  !*** ./src/app/app-routing/app-routing.module.ts ***!
+  \***************************************************/
+/*! exports provided: AppRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _calculator_calculator_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../calculator/calculator.component */ "./src/app/calculator/calculator.component.ts");
+//File was created for future additions, at this moment it's not necessarily to have it.
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var routes = [
+    {
+        path: 'calculator',
+        component: _calculator_calculator_component__WEBPACK_IMPORTED_MODULE_2__["CalculatorComponent"]
+    },
+    {
+        path: '',
+        redirectTo: 'calculator',
+        pathMatch: 'full'
+    },
+];
+var AppRoutingModule = /** @class */ (function () {
+    function AppRoutingModule() {
+    }
+    AppRoutingModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+        })
+    ], AppRoutingModule);
+    return AppRoutingModule;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -41,7 +91,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n</div>\n<h2>Here are some links to help you start: </h2>\n<ul>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">Tour of Heroes</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://github.com/angular/angular-cli/wiki\">CLI Documentation</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">Angular blog</a></h2>\n  </li>\n</ul>\n\n"
+module.exports = "<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -94,6 +144,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing_app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing/app-routing.module */ "./src/app/app-routing/app-routing.module.ts");
+/* harmony import */ var _calculator_calculator_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./calculator/calculator.component */ "./src/app/calculator/calculator.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -103,22 +157,203 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
+                _calculator_calculator_component__WEBPACK_IMPORTED_MODULE_4__["CalculatorComponent"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"]
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+                _app_routing_app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/calculator/calculator.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/calculator/calculator.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n.button{\r\n  text-align: center;\r\n}\r\n.checkbox {\r\n  padding-right: 20px;\r\n}\r\n.container{\r\n  text-align: center;\r\n  position: absolute;\r\n  top: 40%;\r\n  left: 50%;\r\n  -webkit-transform: translate(-50%,-50%);\r\n          transform: translate(-50%,-50%);\r\n  width: 100%;\r\n}\r\n.container span{\r\n  text-transform: uppercase;\r\n  display: block;\r\n}\r\n.mytext1 {\r\n  color: #3b3b3b;\r\n  font-size: 40px;\r\n  font-weight: 700;\r\n  letter-spacing: 8px;\r\n  padding-bottom: 30px;\r\n  position: relative;\r\n  -webkit-animation: text 3s 1;\r\n          animation: text 3s 1;\r\n}\r\n.form-control{\r\n  width: 350px;\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n}\r\n.label-text{\r\n  padding-right: 40px;\r\n  padding-left: 10px;\r\n}\r\n.btn{\r\n  display: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-top: 20px;\r\n  width: 100px;\r\n  height: 38px;\r\n  font-size: 15px;\r\n}\r\nhr{\r\n  width: 600px;\r\n  padding-bottom: 30px;\r\n}\r\n.history{\r\n  text-align: left;\r\n  margin-top: 30px;\r\n}\r\n.alert .alert-danger{\r\n  width: 350px;\r\n}\r\n@-webkit-keyframes text {\r\n  0%{\r\n    color: black;\r\n  }\r\n  30%{\r\n    letter-spacing: 20px;\r\n  }\r\n}\r\n@keyframes text {\r\n  0%{\r\n    color: black;\r\n  }\r\n  30%{\r\n    letter-spacing: 20px;\r\n  }\r\n}\r\ninput[type=\"checkbox\"], input[type=\"radio\"]{\r\n  position: absolute;\r\n  right: 9000px;\r\n}\r\n.toggle input[type=\"radio\"] + .label-text:before{\r\n\r\n  text-align: center;\r\n  font-size: 20px;\r\n  margin-top: 10px;\r\n  content: \"\\f204\";\r\n  font-family: \"FontAwesome\";\r\n  speak: none;\r\n  font-style: normal;\r\n  font-weight: normal;\r\n  font-variant: normal;\r\n  text-transform: none;\r\n  line-height: 1;\r\n  -webkit-font-smoothing:antialiased;\r\n  width: 1em;\r\n  display: inline-block;\r\n  margin-right: 10px;\r\n}\r\n.toggle input[type=\"radio\"]:checked + .label-text:before{\r\n  content: \"\\f205\";\r\n  color: #16a085;\r\n  -webkit-animation: effect 600ms;\r\n          animation: effect 600ms;\r\n}\r\n.toggle input[type=\"radio\"]:disabled + .label-text{\r\n  color: #aaa;\r\n}\r\n.toggle input[type=\"radio\"]:disabled + .label-text:before{\r\n  content: \"\\f204\";\r\n  color: #ccc;\r\n}\r\n@-webkit-keyframes effect{\r\n  0%{-webkit-transform: scale(0);transform: scale(0);}\r\n  25%{-webkit-transform: scale(1.3);transform: scale(1.3);}\r\n  75%{-webkit-transform: scale(1.4);transform: scale(1.4);}\r\n  100%{-webkit-transform: scale(1);transform: scale(1);}\r\n}\r\n@keyframes effect{\r\n  0%{-webkit-transform: scale(0);transform: scale(0);}\r\n  25%{-webkit-transform: scale(1.3);transform: scale(1.3);}\r\n  75%{-webkit-transform: scale(1.4);transform: scale(1.4);}\r\n  100%{-webkit-transform: scale(1);transform: scale(1);}\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/calculator/calculator.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/calculator/calculator.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<link href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n\n<div class=\"container\">\n<h3 class=\"mytext1\">Calculator</h3>\n<hr>\n\n<div class=\"form-group\">\n  <input type=\"number\" class=\"form-control\" id=\"value\"\n         placeholder=\"Enter salary\"\n         required\n         [(ngModel)]=\"calculator.value\" name=\"value\" #value=\"ngModel\">\n  <div [hidden]=\"value.valid || value.pristine\"\n       class=\"alert alert-danger\">\n    value is required\n  </div>\n</div>\n\n<form>\n  <div class=\"form-check\">\n    <label class=\"toggle\">\n      <input type=\"radio\" name=\"toggle\" checked   value=\"EUR\"\n             [(ngModel)]=\"calculator.currency\" name=\"currency\"> <span class=\"label-text\">EUR</span>\n    </label>\n    <label class=\"toggle\">\n      <input type=\"radio\" name=\"toggle\" value=\"GBP\"\n             [(ngModel)]=\"calculator.currency\" name=\"currency\"> <span class=\"label-text\">GBP</span>\n    </label>\n    <label class=\"toggle\">\n      <input type=\"radio\" name=\"toggle\"  value=\"PLN\"\n             [(ngModel)]=\"calculator.currency\" name=\"currency\"> <span class=\"label-text\">PLN</span>\n    </label>\n  </div>\n</form>\n\n<div class=\"button\">\n  <button class=\"btn btn-dark\" (click)=\"addSalary()\" >Calculate</button>\n</div>\n\n<h3 class=\"history\">History</h3>\n\n<table class=\"table table-striped\">\n  <thead>\n  <tr>\n    <th scope=\"col\">id</th>\n    <th scope=\"col\">Currency</th>\n    <th scope=\"col\">Result</th>\n  </tr>\n  </thead>\n  <tbody>\n  <tr *ngFor=\"let cur of currencies\">\n   <td>{{cur.id}}</td>\n    <td>{{ cur.currency }}</td>\n    <td>{{cur.value}}</td>\n  </tr>\n  </tbody>\n</table>\n\n\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/calculator/calculator.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/calculator/calculator.component.ts ***!
+  \****************************************************/
+/*! exports provided: CalculatorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalculatorComponent", function() { return CalculatorComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _currency__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../currency */ "./src/app/currency.ts");
+/* harmony import */ var _currency_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../currency.service */ "./src/app/currency.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CalculatorComponent = /** @class */ (function () {
+    function CalculatorComponent(currencyService, location) {
+        this.currencyService = currencyService;
+        this.location = location;
+        this.calculator = new _currency__WEBPACK_IMPORTED_MODULE_1__["Currency"]();
+        this.submitted = false;
+    }
+    CalculatorComponent.prototype.ngOnInit = function () {
+        this.getSalary();
+    };
+    CalculatorComponent.prototype.newSalary = function () {
+        this.submitted = false;
+        this.calculator = new _currency__WEBPACK_IMPORTED_MODULE_1__["Currency"]();
+    };
+    CalculatorComponent.prototype.addSalary = function () {
+        this.submitted = true;
+        this.save();
+    };
+    CalculatorComponent.prototype.getSalary = function () {
+        var _this = this;
+        return this.currencyService.getCurrencies()
+            .subscribe(function (currencies) {
+            console.log(currencies);
+            _this.currencies = currencies;
+        });
+    };
+    CalculatorComponent.prototype.refresh = function () {
+        window.location.reload();
+    };
+    CalculatorComponent.prototype.save = function () {
+        console.log(this.calculator);
+        this.currencyService.addCurrency(this.calculator)
+            .subscribe();
+    };
+    CalculatorComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-calculator',
+            template: __webpack_require__(/*! ./calculator.component.html */ "./src/app/calculator/calculator.component.html"),
+            styles: [__webpack_require__(/*! ./calculator.component.css */ "./src/app/calculator/calculator.component.css")]
+        }),
+        __metadata("design:paramtypes", [_currency_service__WEBPACK_IMPORTED_MODULE_2__["CurrencyService"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]])
+    ], CalculatorComponent);
+    return CalculatorComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/currency.service.ts":
+/*!*************************************!*\
+  !*** ./src/app/currency.service.ts ***!
+  \*************************************/
+/*! exports provided: CurrencyService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CurrencyService", function() { return CurrencyService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({ 'Content-Type': 'application/json' })
+};
+var CurrencyService = /** @class */ (function () {
+    function CurrencyService(http) {
+        this.http = http;
+        this.currencyUrl = 'http://localhost:8080/api/currencies';
+    }
+    CurrencyService.prototype.getCurrencies = function () {
+        return this.http.get(this.currencyUrl);
+    };
+    CurrencyService.prototype.getCurrency = function (id) {
+        var url = this.currencyUrl + "/" + id;
+        return this.http.get(url);
+    };
+    CurrencyService.prototype.addCurrency = function (currency) {
+        return this.http.post(this.currencyUrl, currency, httpOptions);
+    };
+    CurrencyService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], CurrencyService);
+    return CurrencyService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/currency.ts":
+/*!*****************************!*\
+  !*** ./src/app/currency.ts ***!
+  \*****************************/
+/*! exports provided: Currency */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Currency", function() { return Currency; });
+var Currency = /** @class */ (function () {
+    function Currency() {
+    }
+    return Currency;
 }());
 
 
