@@ -1,9 +1,10 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 <div class="container">
 <h3 class="mytext1">Calculator</h3>
 <hr>
 
 <div class="form-group">
-  <label for="value">value</label>
   <input type="number" class="form-control" id="value"
          placeholder="Enter salary"
          required
@@ -40,32 +41,20 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th scope="col">#</th>
-    <th scope="col">First</th>
-    <th scope="col">Last</th>
-    <th scope="col">Handle</th>
+    <th scope="col">id</th>
+    <th scope="col">Currency</th>
+    <th scope="col">Result</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>@mdo</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Jacob</td>
-    <td>Thornton</td>
-    <td>@fat</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>Larry</td>
-    <td>the Bird</td>
-    <td>@twitter</td>
+  <tr *ngFor="let cur of currencies">
+   <td>{{cur.id}}</td>
+    <td>{{ cur.currency }}</td>
+    <td>{{cur.value}}</td>
   </tr>
   </tbody>
 </table>
+
+
 
 </div>
