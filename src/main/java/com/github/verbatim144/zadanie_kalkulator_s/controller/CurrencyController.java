@@ -1,6 +1,8 @@
 package com.github.verbatim144.zadanie_kalkulator_s.controller;
 
 import com.github.verbatim144.zadanie_kalkulator_s.model.Currency;
+import com.github.verbatim144.zadanie_kalkulator_s.service.SalaryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -12,14 +14,17 @@ import java.util.stream.Collectors;
 @RestController
 public class CurrencyController {
 
+
+    @Autowired
+    SalaryService salaryService;
+
     private Map<Long, Currency> currencyMap = new HashMap<Long, Currency>(){
 
         private static final long serialVersionUID = 1L;
         {
-            put(1L, new Currency(1L, "EUR", 123));
-            put(2L, new Currency(2L, "GBP", 2343));
-        }
+            put(1L, new Currency(1L, "EUR", 0.0));
 
+        }
     };
 
     @GetMapping(value = "/api/currencies")
@@ -43,7 +48,8 @@ public class CurrencyController {
                 .get();
         Long nextId = (long) (maxByKey.getKey() + 1);
         currency.setId(nextId);
-        currencyMap.put(nextId, currency);
+        currencyMap.put(nextId, new Currency(nextId, currency.getCurrency(),  salaryService.getNetMonthlySalary(currency.getCurrency(), currency.getValue())));
+
         return currency;
 
     }
