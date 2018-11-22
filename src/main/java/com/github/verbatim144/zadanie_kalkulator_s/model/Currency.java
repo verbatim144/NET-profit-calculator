@@ -1,6 +1,7 @@
 package com.github.verbatim144.zadanie_kalkulator_s.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
@@ -17,19 +18,20 @@ public class Currency {
     @GeneratedValue
     private Long id;
     private String currency;
-    private Integer value;
-   // private Rates[] rates;
+    private Double value;
+    private Rates[] rates;
 
 
     public Currency(){
 
     }
 
-    public Currency(Long id, String currency, Integer value) {
+    public Currency(Long id, String currency, Double value) {
         this.id = id;
         this.currency = currency;
         this.value = value;
     }
+
 
     public Long getId() {
         return id;
@@ -47,20 +49,25 @@ public class Currency {
         this.currency = currency;
     }
 
-    public Integer getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
-  /*    public Rates[] getRates() {
+    @JsonIgnore
+    public Rates getBidRate(){
+        return rates[0];
+    }
+
+    public Rates[] getRates() {
         return rates;
     }
 
-     public void setRates(Rates[] rates) {
+    public void setRates(Rates[] rates) {
         this.rates = rates;
     }
-*/
+
 }
