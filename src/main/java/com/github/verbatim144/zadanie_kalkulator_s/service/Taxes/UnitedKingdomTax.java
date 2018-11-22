@@ -12,7 +12,7 @@ public class UnitedKingdomTax implements TaxCalculator {
 
     @Override
     public double calculateNetTax(double incomeValue) {
-        return incomeValue * taxPercentage;
+        return incomeValue - (incomeValue * taxPercentage);
     }
 
 

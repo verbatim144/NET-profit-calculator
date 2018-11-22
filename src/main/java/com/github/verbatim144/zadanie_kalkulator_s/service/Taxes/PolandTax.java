@@ -12,7 +12,9 @@ public class PolandTax implements TaxCalculator {
 
     @Override
     public double calculateNetTax(double incomeValue) {
-        return incomeValue * taxPercentage;
+        System.out.println(incomeValue - (incomeValue * taxPercentage));
+        return incomeValue - (incomeValue * taxPercentage);
+
     }
 
 
