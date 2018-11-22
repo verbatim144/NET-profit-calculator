@@ -18,4 +18,5 @@ public class EURConverter implements Converter {
     public double convertCurrency(double incomeValue) {
         return incomeValue * (Double.valueOf(EURrate().getBid()));
     }
+
 }
