@@ -1,62 +1,43 @@
 package com.github.verbatim144.zadanie_kalkulator_s.service;
 
 import com.github.verbatim144.zadanie_kalkulator_s.service.Converter.Converter;
-import com.github.verbatim144.zadanie_kalkulator_s.service.Converter.EURConverter;
-import com.github.verbatim144.zadanie_kalkulator_s.service.Converter.GBPConverter;
-import com.github.verbatim144.zadanie_kalkulator_s.service.Taxes.GermanyTax;
-import com.github.verbatim144.zadanie_kalkulator_s.service.Taxes.PolandTax;
 import com.github.verbatim144.zadanie_kalkulator_s.service.Taxes.TaxCalculator;
-import com.github.verbatim144.zadanie_kalkulator_s.service.Taxes.UnitedKingdomTax;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 @Service
 public class SalaryService {
 
     private TaxCalculator taxCalculator;
     private Converter converter;
+    private Double test;
 
     private int days = 22;
 
 
-    @Bean
-    SalaryService germany(){
-        return new SalaryService(EURConverter(), GermanyTax());
-    }
+    @Qualifier("germany")
+    @Autowired
+    SalaryService germanySalaryService;
 
-    @Bean
-    Converter EURConverter() {
-        return  new EURConverter();
-    }
+    @Qualifier("poland")
+    @Autowired
+    SalaryService polandSalaryService;
 
-    @Bean
-    TaxCalculator GermanyTax(){
-        return new GermanyTax();
-    }
 
-    @Bean
-    SalaryService unitedKingdom(){
-        return new SalaryService(GBPConverter(), GBTax());
-    }
+    @Qualifier("unitedKingdom")
+    @Autowired
+    SalaryService unitedKingdomSalaryService;
 
-    @Bean
-    Converter GBPConverter(){
-        return new GBPConverter();
-    }
 
-    @Bean
-    TaxCalculator GBTax(){
-        return new UnitedKingdomTax();
-    }
+    public SalaryService(){
 
-    @Bean
-    SalaryService poland(){
-        return new SalaryService(PolandTax());
-    }
-
-    @Bean
-    TaxCalculator PolandTax(){
-        return new PolandTax();
     }
 
     public SalaryService(Converter converter, TaxCalculator taxCalculator) {
@@ -69,19 +50,37 @@ public class SalaryService {
     }
 
 
-    public Double monthlyNetSalary(double dailySalary){
+    public double monthlyNetSalary(double dailySalary){
 
-        double monthlySalary = dailySalary * days;
-        double monthlySalaryWithFixedCosts = taxCalculator.calculateFixedCosts(monthlySalary);
+        double monthlySalaryWithFixedCosts = taxCalculator.calculateFixedCosts(dailySalary*days);
         double monthlyNetSalary =  taxCalculator.calculateNetTax(monthlySalaryWithFixedCosts);
-
         return converter.convertCurrency(monthlyNetSalary);
     }
 
+    private Map<String, SalaryService> salaryCalculatorMap;
 
 
+    public double getNetMonthlySalary(String currency, double dailySalaryGross){
 
+        salaryCalculatorMap = new HashMap<>();
+        List<String> salaries = new ArrayList<>();
 
+        if(currency.equals("EUR")) {
+            salaryCalculatorMap.put(currency, germanySalaryService);
+        }else{
+            if(currency.equals("PLN")) {
+                salaryCalculatorMap.put(currency, polandSalaryService);
+            }else{
+                salaryCalculatorMap.put(currency, unitedKingdomSalaryService);
+            }
+        }
+
+        for(Map.Entry<String, SalaryService> entry : salaryCalculatorMap.entrySet()){
+            salaries.add(entry.getKey() + ": " + entry.getValue().monthlyNetSalary(dailySalaryGross));
+            test =  entry.getValue().monthlyNetSalary(dailySalaryGross);
+        }
+        return test;
+    }
 
 
 
