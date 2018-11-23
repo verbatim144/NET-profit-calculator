@@ -7,12 +7,12 @@ public class GermanyTax implements TaxCalculator{
 
     @Override
     public double calculateFixedCosts(double incomeValue) {
-        return incomeValue - fixedCosts;
+            return incomeValue - fixedCosts;
     }
 
     @Override
     public double calculateNetTax(double incomeValue) {
-        return incomeValue - (incomeValue * taxPercentage);
+            return incomeValue - (incomeValue * taxPercentage);
     }
 
 

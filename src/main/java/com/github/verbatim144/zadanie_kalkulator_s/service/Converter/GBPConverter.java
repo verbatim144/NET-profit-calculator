@@ -17,7 +17,6 @@ public class GBPConverter implements Converter {
 
     @Override
     public double convertCurrency(double incomeValue) {
-        System.out.println("result Conver" + incomeValue  * (Double.valueOf(GBPrate().getBid())) );
         return incomeValue * (Double.valueOf(GBPrate().getBid()));
 
     }

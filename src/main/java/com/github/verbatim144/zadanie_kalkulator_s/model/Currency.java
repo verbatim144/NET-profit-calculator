@@ -20,18 +20,28 @@ public class Currency {
     private String currency;
     private Double value;
     private Rates[] rates;
+    private Double inputUser;
 
 
     public Currency(){
 
     }
 
-    public Currency(Long id, String currency, Double value) {
+    public Currency(Long id, String currency, Double inputUser, Double value) {
         this.id = id;
         this.currency = currency;
+        this.inputUser = inputUser;
         this.value = value;
+
     }
 
+    public Double getInputUser() {
+        return inputUser;
+    }
+
+    public void setInputUser(Double inputUser) {
+        this.inputUser = inputUser;
+    }
 
     public Long getId() {
         return id;
@@ -69,5 +79,6 @@ public class Currency {
     public void setRates(Rates[] rates) {
         this.rates = rates;
     }
+
 
 }
