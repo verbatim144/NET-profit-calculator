@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,10 +18,11 @@ public class SalaryService {
 
     private TaxCalculator taxCalculator;
     private Converter converter;
-    private Double test;
 
+    private Double netSalary;
     private int days = 22;
 
+    DecimalFormat df = new DecimalFormat("#.##");
 
     @Qualifier("germany")
     @Autowired
@@ -52,9 +54,13 @@ public class SalaryService {
 
     public double monthlyNetSalary(double dailySalary){
 
-        double monthlySalaryWithFixedCosts = taxCalculator.calculateFixedCosts(dailySalary*days);
-        double monthlyNetSalary =  taxCalculator.calculateNetTax(monthlySalaryWithFixedCosts);
-        return converter.convertCurrency(monthlyNetSalary);
+        if(dailySalary < 0){
+            return 0;
+        }else {
+            double monthlySalaryWithFixedCosts = taxCalculator.calculateFixedCosts(dailySalary * days);
+            double monthlyNetSalary = taxCalculator.calculateNetTax(monthlySalaryWithFixedCosts);
+            return converter.convertCurrency(monthlyNetSalary);
+        }
     }
 
     private Map<String, SalaryService> salaryCalculatorMap;
@@ -77,9 +83,13 @@ public class SalaryService {
 
         for(Map.Entry<String, SalaryService> entry : salaryCalculatorMap.entrySet()){
             salaries.add(entry.getKey() + ": " + entry.getValue().monthlyNetSalary(dailySalaryGross));
-            test =  entry.getValue().monthlyNetSalary(dailySalaryGross);
+            netSalary = Double.valueOf(df.format(entry.getValue().monthlyNetSalary(dailySalaryGross)));
         }
-        return test;
+        if(netSalary < 0){
+            return 0;
+        }else{
+            return netSalary;
+        }
     }
 
 

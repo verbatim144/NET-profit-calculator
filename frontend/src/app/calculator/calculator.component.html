@@ -1,60 +1,62 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
 <div class="container">
-<h3 class="mytext1">Calculator</h3>
-<hr>
+  <h3 class="mytext1">Calculator!</h3>
+  <hr>
 
-<div class="form-group">
-  <input type="number" class="form-control" id="value"
-         placeholder="Enter salary"
-         required
-         [(ngModel)]="calculator.value" name="value" #value="ngModel">
-  <div [hidden]="value.valid || value.pristine"
-       class="alert alert-danger">
-    value is required
+  <div class="form-group">
+    <input type="number" class="form-control" id="value"
+           placeholder="Enter salary"
+           required
+           [(ngModel)]="calculator.value" [(ngModel)]="calculator.inputUser" name="value" #value="ngModel">
+    <div [hidden]="value.valid || value.pristine"
+         class="alert alert-danger">
+      value is required
+    </div>
   </div>
-</div>
 
-<form>
-  <div class="form-check">
-    <label class="toggle">
-      <input type="radio" name="toggle" checked   value="EUR"
-             [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">EUR</span>
-    </label>
-    <label class="toggle">
-      <input type="radio" name="toggle" value="GBP"
-             [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">GBP</span>
-    </label>
-    <label class="toggle">
-      <input type="radio" name="toggle"  value="PLN"
-             [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">PLN</span>
-    </label>
+  <form>
+    <div class="form-check">
+      <label class="toggle">
+        <input type="radio" name="toggle" checked value="EUR"
+               [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">EUR</span>
+      </label>
+      <label class="toggle">
+        <input type="radio" name="toggle" value="GBP"
+               [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">GBP</span>
+      </label>
+      <label class="toggle">
+        <input type="radio" name="toggle" value="PLN"
+               [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">PLN</span>
+      </label>
+    </div>
+  </form>
+
+  <div class="button">
+    <button class="btn btn-dark" (click)="addSalary()">Calculate</button>
   </div>
-</form>
 
-<div class="button">
-  <button class="btn btn-dark" (click)="addSalary()" >Calculate</button>
-</div>
+  <h3 class="history">History!</h3>
 
-<h3 class="history">History</h3>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Currency type</th>
+      <th scope="col">Daily rate</th>
+      <th scope="col">Net monthly salary(zł)</th>
 
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">id</th>
-    <th scope="col">Currency</th>
-    <th scope="col">Result</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let cur of currencies">
-   <td>{{cur.id}}</td>
-    <td>{{ cur.currency }}</td>
-    <td>{{cur.value}}</td>
-  </tr>
-  </tbody>
-</table>
-
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cur of currencies">
+      <td>{{cur.id}}</td>
+      <td>{{cur.currency}}</td>
+      <td>{{cur.inputUser}}</td>
+      <td>{{cur.value}}</td>
+    </tr>
+    </tbody>
+  </table>
 
 
 </div>

@@ -34,7 +34,9 @@
   margin-right: auto;
 }
 
-
+.zloty-text{
+  white-space: nowrap;
+}
 
 .label-text{
   padding-right: 40px;

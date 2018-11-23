@@ -7,7 +7,7 @@ public class UnitedKingdomTax implements TaxCalculator {
 
     @Override
     public double calculateFixedCosts(double incomeValue) {
-        return incomeValue - fixedCosts;
+            return incomeValue - fixedCosts;
     }
 
     @Override
