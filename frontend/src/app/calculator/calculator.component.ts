@@ -9,7 +9,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-
+  value: Currency;
+  searchValue = null;
   currencies: Currency[];
   calculator = new Currency();
   submitted = false;
@@ -41,6 +42,12 @@ export class CalculatorComponent implements OnInit {
       );
   }
 
+  onSelect(selectedItem: any) {
+    console.log("Selected item Id: ", selectedItem.Id); // You get the Id of the selected item here
+  }
+
+
+
   refresh(): void {
     window.location.reload();
   }
@@ -51,4 +58,7 @@ export class CalculatorComponent implements OnInit {
       .subscribe();
   }
 
+  clearSearch() {
+    this.searchValue = '';
+  }
 }
