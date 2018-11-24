@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CurrencyService {
-  private currencyUrl = 'http://localhost:8080/api/currencies';
+  private currencyUrl = 'http://localhost:8080/api/';
   constructor (
     private http: HttpClient
   ) { }

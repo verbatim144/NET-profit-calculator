@@ -6,14 +6,10 @@ import {CalculatorComponent} from "../calculator/calculator.component";
 
 const routes: Routes = [
   {
-    path: 'calculator',
-    component: CalculatorComponent
-  },
-  {
     path: '',
-    redirectTo: 'calculator',
+    component: CalculatorComponent,
     pathMatch: 'full'
-  },
+  }
 ];
 
 @NgModule({

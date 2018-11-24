@@ -53,7 +53,6 @@ public class SalaryService {
 
 
     public double monthlyNetSalary(double dailySalary){
-
         if(dailySalary < 0){
             return 0;
         }else {

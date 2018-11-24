@@ -10,7 +10,7 @@ public class GBPConverter implements Converter {
     RestTemplate restTemplate = new RestTemplate();
 
     public Rates GBPrate() {
-        String RateResourceUrl = "http://api.nbp.pl/api/exchangerates/rates/c/gbp/today/";
+        String RateResourceUrl = "http://api.nbp.pl/api/exchangerates/rates/c/gbp";
         return restTemplate.getForObject(RateResourceUrl, Currency.class).getBidRate();
 
     }

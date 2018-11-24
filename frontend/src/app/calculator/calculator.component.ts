@@ -41,6 +41,10 @@ export class CalculatorComponent implements OnInit {
       );
   }
 
+  onSelect(selectedItem: any) {
+    console.log("Selected item Id: ", selectedItem.Id); // You get the Id of the selected item here
+  }
+
   refresh(): void {
     window.location.reload();
   }
