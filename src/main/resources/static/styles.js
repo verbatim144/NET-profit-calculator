@@ -48,7 +48,7 @@ module.exports = "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\r\nbody {\r\n  background:\r\n    linear-gradient(\r\n      100deg,\r\n      rgba(11, 11, 12, 0.6),\r\n      rgba(15, 14, 15, 0.6)\r\n    ),\r\n    url('background.jpg');\r\n  background-size: cover;\r\n  background-repeat: repeat;\r\n  height: 100vh;\r\n}\r\n"
 
 /***/ }),
 
