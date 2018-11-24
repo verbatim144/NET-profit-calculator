@@ -12,11 +12,11 @@ public class EURConverter implements Converter {
     private Rates EURrate() {
         String RateResourceUrl = "http://api.nbp.pl/api/exchangerates/rates/c/eur";
         return restTemplate.getForObject(RateResourceUrl, Currency.class).getBidRate();
-    }
+        }
 
-    @Override
-    public double convertCurrency(double incomeValue) {
+@Override
+public double convertCurrency(double incomeValue) {
         return incomeValue * (Double.valueOf(EURrate().getBid()));
-    }
+        }
 
-}
+        }

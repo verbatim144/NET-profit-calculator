@@ -145,16 +145,21 @@ hr{
 
 .form-control{
   width: 260px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Yu Gothic"
 }
 
 .p-salary{
   margin-top: 15px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.head-tr{
+  font-family: 'Raleway', sans-serif;
 }
 
 .table{
   background: rgba(255, 255, 255, 0.8);
-  font-family: 'Raleway', sans-serif;
+  font-family: "Yu Gothic"
 }
 
 .table-wrapper-scroll-y {
@@ -180,6 +185,10 @@ hr{
 
   .form-default{
     margin-top: 90px;
+  }
+
+  .table-wrapper-scroll-y{
+    max-height: 200px;
   }
 
 }
