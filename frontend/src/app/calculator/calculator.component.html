@@ -1,0 +1,70 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm">
+
+       <form class="form-default">
+          <h3>Salary calculator</h3>
+            <hr>
+               <div class="form-group">
+                 <input type="number" class="form-control" id="value"
+                    placeholder="Enter daily rate"
+                     required
+                      [(ngModel)]="calculator.value" [(ngModel)]="calculator.inputUser" name="value" #value="ngModel">
+
+               </div>
+        <form>
+          <div class="form-check">
+            <label class="toggle">
+              <input type="radio" name="toggle" value="EUR"
+               [(ngModel)]="calculator.currency" name="currency"><span class="label-text">EUR</span>
+            </label>
+            <label class="toggle">
+               <input type="radio" name="toggle"  value="GBP"
+               [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">GBP</span>
+             </label>
+            <label class="toggle">
+              <input type="radio" name="toggle" value="PLN"
+               [(ngModel)]="calculator.currency" name="currency"> <span class="label-text">PLN</span>
+            </label>
+           </div>
+         </form>
+
+         <div class="result-label">
+           <p class="p-salary">Net monthly salary: </p>
+           <h4 id="myInput">{{currencies[currencies.length-1].value}}</h4>
+         </div>
+
+         <div class="button" >
+           <button class="btn btn-dark" (click)="addSalary()" (click)="refresh()">Calculate</button>
+        </div>
+
+       </form>
+    </div>
+
+     <div class="col-sm">
+
+       <table class="table table-striped table-wrapper-scroll-y">
+         <thead>
+           <tr class="head-tr">
+              <th scope="col">№</th>
+              <th scope="col">Currency type</th>
+              <th scope="col">Daily rate</th>
+              <th scope="col">Net monthly salary(zł)</th>
+
+           </tr>
+          </thead>
+          <tbody>
+             <tr *ngFor="let cur of currencies">
+                <td>{{cur.id}}</td>
+               <td>{{cur.currency}}</td>
+               <td>{{cur.inputUser}}</td>
+               <td>{{cur.value}}</td>
+            </tr>
+           </tbody>
+         </table>
+      </div>
+  </div>
+</div>
