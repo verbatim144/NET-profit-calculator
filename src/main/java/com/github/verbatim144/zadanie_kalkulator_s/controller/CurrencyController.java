@@ -23,7 +23,6 @@ public class CurrencyController {
         private static final long serialVersionUID = 1L;
         {
             put(1L, new Currency(1L, "EUR", 10.0, 0.0));
-
         }
     };
 

@@ -34,11 +34,11 @@
 
          <div class="result-label">
            <p class="p-salary">Net monthly salary: </p>
-           <h4 id="myInput">{{currencies[currencies.length-1].value}}</h4>
+           <h4 id="myInput" *ngIf="currencies">{{currencies[currencies.length-1].value}}</h4>
          </div>
 
-         <div class="button" >
-           <button class="btn btn-dark" (click)="addSalary()" (click)="refresh()">Calculate</button>
+         <div class="button">
+           <button type="button" class="btn btn-dark"   (click)="refresh()"  (click)="addSalary()">Calculate</button>
         </div>
 
        </form>
@@ -57,7 +57,7 @@
            </tr>
           </thead>
           <tbody>
-             <tr *ngFor="let cur of currencies">
+             <tr *ngFor="let cur of currencies; index as i">
                 <td>{{cur.id}}</td>
                <td>{{cur.currency}}</td>
                <td>{{cur.inputUser}}</td>
