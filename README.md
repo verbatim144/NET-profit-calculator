@@ -5,7 +5,6 @@
 * [Introduction](#introduction)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Warnings](#warnings)
 * [Screenshots](#screenshots)
 
 ## Introduction
@@ -15,7 +14,7 @@ The main task of this program is to calculate the NET profit (PLN) based on inco
 ## Technologies
 
 Project is created with:
-* Java: 1.8
+* Java: 10.0
 * Spring: 5.0 
 * Node: 8.12.0
 * Angular CLI: 6.2.4
@@ -27,13 +26,9 @@ Project is created with:
 To run this project:
 * Clone repository "zadanie_kalkulator_s"
 * Open the project in a programming environment (it can be IntelliJ IDEA)
-* Import maven changes and set 1.8 version of Java
+* Import maven changes and set 10.0 version of Java (project also can be started with 1.8 or 11.0 version of Java)
 * Run ZadanieKalkulatorSApplication.class
 * Start a project, by typing http://localhost:8080/ in the address line of your browser
-
-## Warnings
-
-If this project doesn't work, that might be a problem with Windows 10 or something else. Try to use Google Chrome.
 
 ## Screenshots
 
