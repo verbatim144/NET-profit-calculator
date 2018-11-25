@@ -180,18 +180,33 @@ hr{
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 765px) {
 
   .table{
   margin-top: 50px;
   }
 
   .form-default{
-    margin-top: 90px;
+    margin-top: 200px;
+    width: 300px;
   }
 
   .table-wrapper-scroll-y{
     max-height: 200px;
+  }
+
+  .btn{
+    margin-top: 10px;
+  }
+
+  .p-salary{
+    margin-top: 5px;
+  }
+
+  .row{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }
